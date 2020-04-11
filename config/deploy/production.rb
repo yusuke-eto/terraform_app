@@ -6,8 +6,11 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
+# EC2サーバーのIP、EC2サーバーにログインするユーザー名、サーバーのロールを記述
+server 'ec2-18-180-67-171.ap-northeast-1.compute.amazonaws.com', user: 'yusuke', roles: %w(app db web)
 
-
+# デプロイするサーバーにsshログインする鍵の情報を記述
+set :ssh_options, keys: '~/others/simple_env/yusuke_key_rsa'
 
 # role-based syntax
 # ==================
